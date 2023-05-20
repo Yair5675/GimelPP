@@ -1,4 +1,5 @@
 package type_system;
 
-public abstract class Primitive extends Type {
+public abstract class Primitive<T> extends Type {
+    protected T value;
 }
