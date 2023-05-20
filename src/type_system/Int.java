@@ -5,14 +5,6 @@ public class Int extends Primitive<Integer> {
         this.value = value;
     }
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     @Override
     public String getType() {
         return "שלם";
