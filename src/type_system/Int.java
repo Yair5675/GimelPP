@@ -1,5 +1,7 @@
 package type_system;
 
+import errors.ArithmeticErrors;
+
 public class Int extends Primitive<Integer> {
     public Int(final int value) {
         this.value = value;
@@ -8,18 +10,18 @@ public class Int extends Primitive<Integer> {
     /**
      * Addition for Int and primitive types.
      */
-    public Type add(Primitive<?> other) {
+    public Type add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
         if (other == null) return null;
 
         // Checking the concrete type:
         if (other instanceof Bool) return this.add((Bool) other);
-        if (other instanceof Int) return this.add((Int) other);
-        if (other instanceof FloatingNumber) return this.add((FloatingNumber) other);
-        if (other instanceof Char) return this.add((Char) other);
-        if (other instanceof Str) return this.add((Str) other);
+        else if (other instanceof Int) return this.add((Int) other);
+        else if (other instanceof FloatingNumber) return this.add((FloatingNumber) other);
+        else if (other instanceof Char) return this.add((Char) other);
+        else if (other instanceof Str) return this.add((Str) other);
 
-        // The function should never reach here, if function returns null this might be the reason:
-        return null;
+        // If the given type is not one of the types above, throw an error:
+        else throw new ArithmeticErrors.InvalidAdditionTypesError(this, other);
     }
 
     private Int add(Bool bool) {
