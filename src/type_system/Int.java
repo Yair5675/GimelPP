@@ -10,7 +10,7 @@ public class Int extends Primitive<Integer> {
     /**
      * Addition for Int and primitive types.
      */
-    public Type add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
+    public Primitive<?> add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
         if (other == null) return null;
 
         // Checking the concrete type:
