@@ -1,6 +1,5 @@
 package type_system.primitives;
 
-import errors.ArithmeticErrors;
 
 public class Str extends SingleValuePrimitive<String> {
     public Str(final String value) {
