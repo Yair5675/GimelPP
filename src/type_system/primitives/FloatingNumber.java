@@ -1,13 +1,13 @@
-package type_system;
+package type_system.primitives;
 
 import errors.ArithmeticErrors;
 
-public class FloatingNumber extends Primitive<Double> {
+public class FloatingNumber extends SingleValuePrimitive<Double> {
     public FloatingNumber(final double value) {
         this.value = value;
     }
 
-    public Primitive<?> add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
+    public SingleValuePrimitive<?> add(SingleValuePrimitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
         if (other == null) return null;
 
         // Checking concrete types:

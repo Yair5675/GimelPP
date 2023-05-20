@@ -1,6 +1,6 @@
-package type_system;
+package type_system.primitives;
 
-public abstract class Primitive<T> extends Type {
+public abstract class SingleValuePrimitive <T> extends Primitive {
     protected T value;
 
     public T getValue() {

@@ -1,13 +1,13 @@
-package type_system;
+package type_system.primitives;
 
 import errors.ArithmeticErrors;
 
-public class Bool extends Primitive<Boolean> {
+public class Bool extends SingleValuePrimitive<Boolean> {
     public Bool(final boolean value) {
         this.value = value;
     }
 
-    public Primitive<?> add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
+    public SingleValuePrimitive<?> add(SingleValuePrimitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
         if (other == null) return null;
 
         // Checking for concrete types:

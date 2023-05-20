@@ -1,6 +1,6 @@
 package errors;
 
-import type_system.Type;
+import type_system.primitives.Type;
 
 public final class ArithmeticErrors {
     public static final class InvalidAdditionTypesError extends Exception {

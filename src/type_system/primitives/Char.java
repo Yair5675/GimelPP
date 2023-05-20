@@ -1,13 +1,13 @@
-package type_system;
+package type_system.primitives;
 
 import errors.ArithmeticErrors;
 
-public class Char extends Primitive<Character> {
+public class Char extends SingleValuePrimitive<Character> {
     public Char(final char c) {
         this.value = c;
     }
 
-    public Primitive<?> add(Primitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
+    public SingleValuePrimitive<?> add(SingleValuePrimitive<?> other) throws ArithmeticErrors.InvalidAdditionTypesError {
         if (other == null) return null;
 
         // Checking for concrete types:
